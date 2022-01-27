@@ -25,8 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-(setq fancy-splash-image 'logo)
+(setq doom-theme 'doom-one-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -53,3 +52,8 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(add-to-list 'initial-frame-alist '(fullscreen))
+(setq fancy-splash-image (expand-file-name "banner.png" doom-private-dir))
+(setq dashboard-startup-banner nil)
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
