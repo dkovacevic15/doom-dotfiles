@@ -53,7 +53,34 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(add-to-list 'initial-frame-alist '(fullscreen))
 (setq fancy-splash-image (expand-file-name "banner.png" doom-private-dir))
-(setq dashboard-startup-banner nil)
-(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+;; Does not work on MacOS :(
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+(map! :after winum :leader
+      :n "0" #'winum-select-window-0-or-10
+      :n "1" #'winum-select-window-1
+      :n "2" #'winum-select-window-2
+      :n "3" #'winum-select-window-3
+      :n "4" #'winum-select-window-4
+      :n "5" #'winum-select-window-5
+      :n "6" #'winum-select-window-6
+      :n "7" #'winum-select-window-7
+      :n "8" #'winum-select-window-8
+      :n "9" #'winum-select-window-9)
+(after! (winum which-key)
+  (push '((nil . "winum-select-window-[0-9]") . t) which-key-replacement-alist))
+(after! winum
+  (setq winum-scope 'frame-local))
+
+
+(map! :leader
+      :desc "M-x""SPC" #'execute-extended-command)
+
+(map! :leader
+      :desc "Open kill ring""k" #'consult-yank-from-kill-ring)
+
+;; Only disables "Are you sure?"-type prompts.
+;; Prompts for unsaved modified buffers, terminals with running processes etc will still appear.
+(setq confirm-kill-emacs nil)
