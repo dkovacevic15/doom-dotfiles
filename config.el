@@ -54,6 +54,8 @@
 ;; they are implemented.
 
 (setq fancy-splash-image (expand-file-name "banner.png" doom-private-dir))
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+
 
 ;; Does not work on MacOS :(
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
@@ -84,3 +86,5 @@
 ;; Only disables "Are you sure?"-type prompts.
 ;; Prompts for unsaved modified buffers, terminals with running processes etc will still appear.
 (setq confirm-kill-emacs nil)
+
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
