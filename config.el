@@ -58,6 +58,7 @@
 
 
 ;; Does not work on MacOS :(
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (map! :after winum :leader
