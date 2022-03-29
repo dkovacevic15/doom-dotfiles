@@ -89,3 +89,5 @@
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (setq rainbow-delimiters-max-face-count 0)
 (setq projectile-project-search-path '("~/Workspace" "~/Playground"))
+
+(setq treemacs--width-is-locked nil)
