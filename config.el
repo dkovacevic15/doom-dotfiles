@@ -91,3 +91,6 @@
 (setq projectile-project-search-path '("~/Workspace" "~/Playground"))
 
 (setq treemacs--width-is-locked nil)
+; Separate kill ring from system clipboard
+(setq interprogram-cut-function nil)
+
