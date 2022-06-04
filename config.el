@@ -94,3 +94,13 @@
 ; Separate kill ring from system clipboard
 (setq interprogram-cut-function nil)
 
+(after! lispy
+  (setq lispyville-key-theme
+        '(;; (operators normal)
+          ;; c-w
+          ;; (prettify insert)
+          ;; (atom-movement normal visual)
+          ;; (additional-movement normal)
+          ;; slurp/barf-lispy
+          ;; additional
+          )))
