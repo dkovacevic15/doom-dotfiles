@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Menlo" :size 18))
+(setq doom-font (font-spec :family "Menlo" :size 16))
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -93,6 +93,10 @@
 (setq treemacs--width-is-locked nil)
 ; Separate kill ring from system clipboard
 (setq interprogram-cut-function nil)
+(setq save-interprogram-paste-before-kill t)
+
+(setq +tree-sitter-hl-enabled-modes '(not rjsx-mode web-mode typescript-tsx-mode))
+
 
 (after! lispy
   (setq lispyville-key-theme
