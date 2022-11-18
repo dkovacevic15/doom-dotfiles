@@ -92,10 +92,8 @@
 
 (setq treemacs--width-is-locked nil)
 ; Separate kill ring from system clipboard
-(setq interprogram-cut-function nil)
-(setq save-interprogram-paste-before-kill t)
 
-(setq +tree-sitter-hl-enabled-modes '(not rjsx-mode web-mode typescript-tsx-mode))
+(setq +tree-sitter-hl-enabled-modes '())
 
 
 (after! lispy
